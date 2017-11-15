@@ -331,6 +331,8 @@ class Client extends EventEmitter {
 
         if (!$this->curlHandle) {
             $this->curlHandle = curl_init();
+        } else {
+            curl_reset($this->curlHandle);
         }
 
         curl_setopt_array($this->curlHandle, $settings);
